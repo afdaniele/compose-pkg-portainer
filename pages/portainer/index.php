@@ -6,6 +6,28 @@
 # @Last modified time: Wednesday, January 10th 2018
 
 use \system\classes\Core;
+use \system\classes\Configuration;
+
+$pages_available = [
+  'dashboard',
+  'templates',
+  'stacks',
+  'containers',
+  'images',
+  'networks',
+  'volumes',
+  'events',
+  'host',
+  // ---
+  'extensions',
+  'endpoints',
+  'settings'
+];
+$default_page = 'dashboard';
+
+$page = Configuration::$ACTION;
+if (!in_array(Configuration::$ACTION, $pages_available))
+  $page = $default_page;
 
 // get Portainer hostname (defaults to HTTP_HOST if not set)
 $portainer_hostname = Core::getSetting('portainer_hostname', 'portainer');
@@ -13,7 +35,7 @@ if(strlen($portainer_hostname) < 2){
   $portainer_hostname = $_SERVER['HTTP_HOST'];
 }
 $portainer_port = Core::getSetting('portainer_port', 'portainer');
-$portainer_url = sprintf('http://%s:%s', $portainer_hostname, $portainer_port);
+$portainer_url = sprintf('http://%s:%s/#/%s', $portainer_hostname, $portainer_port, $page);
 ?>
 
 <style type="text/css">
