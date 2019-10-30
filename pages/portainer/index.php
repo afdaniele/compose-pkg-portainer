@@ -30,7 +30,7 @@ if (!in_array(Configuration::$ACTION, $pages_available))
 // get Portainer hostname (defaults to HTTP_HOST if not set)
 $portainer_hostname = Core::getSetting('portainer_hostname', 'portainer');
 if(strlen($portainer_hostname) < 2){
-  $portainer_hostname = $_SERVER['HTTP_HOST'];
+  $portainer_hostname = strstr($_SERVER['HTTP_HOST'], ':', true);
 }
 $portainer_port = Core::getSetting('portainer_port', 'portainer');
 $portainer_url = sprintf('http://%s:%s/#/%s', $portainer_hostname, $portainer_port, $page);
