@@ -1,3 +1,7 @@
+## 0.1.4 (January 07, 2020)
+  - fixed http_host
+  - minor
+
 ## 0.1.3 (October 30, 2019)
   - Merge branch 'afdaniele-patch-1'
   - fixed bug with port in HTTP_HOST
