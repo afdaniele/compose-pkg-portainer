@@ -1,3 +1,7 @@
+## 1.0.0-rc (July 02, 2020)
+  - Merge remote-tracking branch 'origin/devel'
+  - using Core::getBrowserHostname
+
 ## 0.1.4 (January 07, 2020)
   - fixed http_host
   - minor
