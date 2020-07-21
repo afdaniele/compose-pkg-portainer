@@ -1,6 +1,6 @@
 {
     "name" : "Portainer",
-    "package" : "duckietown",
+    "package" : "portainer",
     "menu_entry" : {
         "order" : 1,
         "icon" : {

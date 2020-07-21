@@ -28,16 +28,16 @@ if (!in_array(Configuration::$ACTION, $pages_available))
   $page = $default_page;
 
 // get Portainer hostname (defaults to HTTP_HOST if not set)
-$portainer_hostname = Core::getSetting('portainer_hostname', 'portainer');
+$portainer_hostname = Core::getSetting('hostname', 'portainer');
 if(strlen($portainer_hostname) < 2){
   $portainer_hostname = Core::getBrowserHostname();
 }
-$portainer_port = Core::getSetting('portainer_port', 'portainer');
+$portainer_port = Core::getSetting('port', 'portainer');
 $portainer_url = sprintf('http://%s:%s/#/%s', $portainer_hostname, $portainer_port, $page);
 ?>
 
 <style type="text/css">
-body > #page_container{
+#page_container{
   min-width: 100%;
   padding-left: 0;
   padding-right: 0;
