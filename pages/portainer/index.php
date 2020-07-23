@@ -37,11 +37,26 @@ $portainer_url = sprintf('http://%s:%s/#/%s', $portainer_hostname, $portainer_po
 ?>
 
 <style type="text/css">
-#page_container{
-  min-width: 100%;
-  padding-left: 0;
-  padding-right: 0;
-}
+    #page_container{
+      min-width: 100%;
+    }
+    
+    ._ctheme_content {
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+    }
+    
+    #portainer_iframe {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        top: 0;
+    }
 </style>
 
 <iframe
@@ -49,20 +64,4 @@ $portainer_url = sprintf('http://%s:%s/#/%s', $portainer_hostname, $portainer_po
   src="<?php echo $portainer_url ?>"
   frameborder="0"
   scrolling="yes"
-  style="width: 100%; position: absolute; top: 50px;"
 ></iframe>
-
-<script type="text/javascript">
-  var navbar_height = 50;
-  var footbar_height = 50;
-
-  function adjustIFrameHeight() {
-    var height = $(window).height() - navbar_height - footbar_height;
-    // apply height to iframe
-    $('#portainer_iframe').css("height", height);
-  }
-
-  $(window).on("resize", adjustIFrameHeight);
-  $(document).load(adjustIFrameHeight);
-  $(document).ready(adjustIFrameHeight);
-</script>
