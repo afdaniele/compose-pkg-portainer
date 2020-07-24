@@ -1,3 +1,6 @@
+## 1.0.1 (July 24, 2020)
+  - fixed iframe position
+
 ## 1.0.0 (July 23, 2020)
   - added support for new modern theme
   - minor
