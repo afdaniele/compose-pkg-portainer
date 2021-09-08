@@ -66,3 +66,4 @@ $portainer_url = sprintf('http://%s/#/%s', $portainer_hostname, $page);
   frameborder="0"
   scrolling="yes"
 ></iframe>
+

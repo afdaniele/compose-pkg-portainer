@@ -6,11 +6,6 @@
             "type": "text",
             "default": null,
             "details": "Hostname of the Portainer instance"
-        },
-        "port": {
-            "type": "text",
-            "default": 9000,
-            "details": "Port of the Portainer instance"
         }
     }
 }
