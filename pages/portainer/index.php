@@ -38,7 +38,7 @@ $portainer_port = ($portainer_port == "0")? "" : sprintf(":%s", ltrim($portainer
 
 // get path (if any)
 $portainer_path = Core::getSetting('path', 'portainer');
-$portainer_path = (strlen($portainer_path) <= 2)? "" : sprintf("/%s", ltrim($portainer_path, "/"));
+$portainer_path = (strlen(trim($portainer_path)) <= 0)? "" : sprintf("/%s", ltrim($portainer_path, "/"));
 
 // compile URL
 $portainer_url = sprintf(
