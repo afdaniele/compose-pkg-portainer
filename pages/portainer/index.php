@@ -32,8 +32,22 @@ $portainer_hostname = Core::getSetting('hostname', 'portainer');
 if(strlen($portainer_hostname) < 2){
   $portainer_hostname = Core::getBrowserHostname();
 }
+// get port (if any)
 $portainer_port = Core::getSetting('port', 'portainer');
-$portainer_url = sprintf('http://%s:%s/#/%s', $portainer_hostname, $portainer_port, $page);
+$portainer_port = ($portainer_port == "0")? "" : sprintf(":%s", ltrim($portainer_port, ":"));
+
+// get path (if any)
+$portainer_path = Core::getSetting('path', 'portainer');
+$portainer_path = (strlen($portainer_path) <= 2)? "" : sprintf("/%s", ltrim($portainer_path, "/"));
+
+// compile URL
+$portainer_url = sprintf(
+    'http://%s%s%s/#/%s',
+    $portainer_hostname,
+    $portainer_port,
+    $portainer_path,
+    $page
+);
 ?>
 
 <style type="text/css">
