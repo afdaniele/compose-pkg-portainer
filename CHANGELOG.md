@@ -1,3 +1,7 @@
+## 1.0.2 (March 07, 2023)
+  - bug fix
+  - added field `path` to configuration
+
 ## 1.0.1 (July 24, 2020)
   - fixed iframe position
 
